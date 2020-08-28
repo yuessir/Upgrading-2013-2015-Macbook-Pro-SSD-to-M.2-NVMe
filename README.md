@@ -40,6 +40,7 @@
 2. 所有MacBook Pro 機型 從 Late 2013 到 Mid 2015 (MacBookPro11,1 to MacBookPro12,1)
 
 ##Macbook Air細節說明
+
 2013-2014 MacBook Air 機型 原生自帶 2通道 PCIe 2.0 AHCI SSD (速度達 ~700MB/s)。
 這些支援達4TB NVMe SSD如果固件升級到至少**MBA61.0103.B00**, 速度規格可以近 PCIe 2.0 4通道 。
 但**不支援**原生休眠模式，目前已經有解決方案
@@ -59,6 +60,7 @@
 2. MacBook Air 13" 2017 (MacBookAir7,2)
 
 ##MacBook Pro retina 13" and 15"細節說明
+
 2013-2014 MacBookPro retina  機型 原生自帶 2通道 PCIe 2.0 AHCI SSD (速度達 ~700MB/s)。
 這些支援達4TB NVMe SSD如果固件升級到至少**MBP111.0142.B00**(13")或**MBP112.0142.B00**(15"), 速度規格可以近 PCIe 2.0 4通道 。
 但**不支援**原生休眠模式，目前已經有解決方案
@@ -131,6 +133,7 @@
 有問題的SSD 可能是因為固件(firmware )問題
 
 ##我還有其他選擇嗎?
+
 可以使用 AHCI (貴/沒保固/缺點多)
 
 -     Apple SSUAX and SSUBX OEM blades (貴/二手/沒保)
@@ -149,7 +152,9 @@
 -     NVMe 裝置格式化過程 512b sectors 小於 10.13無法工作
 -     NVMe 裝置格式化過程 4K sector size (如Sabrent Rocket) 在macOS 10.12可以正常對齊, 請更新BootRom到最近的版本
 
+
 #gumstick轉接器的真與假
+
 Apple 用了自家特規的接口，而其他廠商採用常見的M.2 接口
 所以要升級，你必須要有轉接卡
 已經經過測試的廠商為 **Sintech**
@@ -170,4 +175,5 @@ https://www.amazon.com/Sintech-Adapter-Upgrade-2013-2016-2013-2015/dp/B07FYY3H5F
 ![](resources/sintech20172018.jpg)
 
 #修復休眠問題
+
 ###待續

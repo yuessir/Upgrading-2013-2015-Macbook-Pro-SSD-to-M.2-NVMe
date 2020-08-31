@@ -39,7 +39,7 @@
 1. 所有MacBook Air 機型 從 Mid 2013 到 2017 (MacBookAir6,1 to MacBookAir7,1)
 2. 所有MacBook Pro 機型 從 Late 2013 到 Mid 2015 (MacBookPro11,1 to MacBookPro12,1)
 
-##Macbook Air細節說明
+## Macbook Air細節說明
 
 2013-2014 MacBook Air 機型 原生自帶 2通道 PCIe 2.0 AHCI SSD (速度達 ~700MB/s)。
 這些支援達4TB NVMe SSD如果固件升級到至少**MBA61.0103.B00**, 速度規格可以近 PCIe 2.0 4通道 。
@@ -59,7 +59,7 @@
 1. MacBook Air 13" early 2015 (MacBookAir7,1)
 2. MacBook Air 13" 2017 (MacBookAir7,2)
 
-##MacBook Pro retina 13" and 15"細節說明
+## MacBook Pro retina 13" and 15"細節說明
 
 2013-2014 MacBookPro retina  機型 原生自帶 2通道 PCIe 2.0 AHCI SSD (速度達 ~700MB/s)。
 這些支援達4TB NVMe SSD如果固件升級到至少**MBP111.0142.B00**(13")或**MBP112.0142.B00**(15"), 速度規格可以近 PCIe 2.0 4通道 。
@@ -132,7 +132,7 @@
 
 有問題的SSD 可能是因為固件(firmware )問題
 
-##我還有其他選擇嗎?
+## 我還有其他選擇嗎?
 
 可以使用 AHCI (貴/沒保固/缺點多)
 
@@ -146,14 +146,14 @@
 -     OWC Aura Pro X : 不便宜 與其他NVMe比較速度不算快
 -     Transcend JetDrive 850/855 : 不便宜 與其他NVMe比較速度不算快
 
-##還有一些要知道的事
+## 還有一些要知道的事
 
 -     所有 NVMe M.2裝置 原生支援TRIM
 -     NVMe 裝置格式化過程 512b sectors 小於 10.13無法工作
 -     NVMe 裝置格式化過程 4K sector size (如Sabrent Rocket) 在macOS 10.12可以正常對齊, 請更新BootRom到最近的版本
 
 
-#gumstick轉接器的真與假
+# gumstick轉接器的真與假
 
 Apple 用了自家特規的接口，而其他廠商採用常見的M.2 接口
 所以要升級，你必須要有轉接卡
@@ -174,14 +174,14 @@ https://www.amazon.com/Sintech-Adapter-Upgrade-2013-2016-2013-2015/dp/B07FYY3H5F
 如果是在2017-2018年製造的Sintech轉卡請與下圖比較進行確認
 ![](resources/sintech20172018.jpg)
 
-#修復休眠問題
+# 修復休眠問題
 
 在2013-2014版本機型上包含MacBook Pro retina 13" & 15", 與 MacBook Air 11" & 13"因 為BootRom固件驅動(DXE NVMe Driver)缺陷導致休眠喚起時產生問題。
 這問題發生在**所有NVMe類型的 SSD**上，甚至Apple NVMe SSDs, 甚至 OWC aura Pro 2, 甚至 Transcend 850 NVMe SSDs...等
 
 這問題在於2013-2014 MacBooks的固件驅動(DXE NVMe Driver)缺陷
 
-有兩個解決方案
+有幾個解決方案
 1. 使用下面命令停止(disable )休眠功能
 `sudo pmset -a hibernatemode 0 standby 0 autopoweroff 0`
 
@@ -200,7 +200,7 @@ http://www.cmizapper.com/products/mattcard.html
 MattCard有自己的ROM，可以接管主板上的，當然它也能隨時拔除，然後恢復到主板的ROM，也就是沒修改沒打過補丁的狀態。
 
 
-#BootCamp安裝問題
+# BootCamp安裝問題
 
 在做BootCamp安裝Windows 10 前請先做好完整的備份。
 
@@ -217,15 +217,15 @@ MattCard有自己的ROM，可以接管主板上的，當然它也能隨時拔除
 
 安裝過程也請將電源插頭插上，勿依靠電池來完成全部安裝過程
 
-##其他安裝問題How to fix a drive partition failure while installing Windows through Boot Camp in High Sierra
+## 其他安裝問題How to fix a drive partition failure while installing Windows through Boot Camp in High Sierra
 https://appleinsider.com/articles/18/01/29/how-to-fix-a-drive-partition-failure-while-installing-windows-through-boot-camp-in-high-sierra
 
-##An error occurred while partitioning the disk" in Mojave Boot Camp Assistant
-因為硬碟overallocation造成
+## An error occurred while partitioning the disk" in Mojave Boot Camp Assistant
+因為硬碟overallocation造成，若產生問題你可能在畫面上看到fix overallocation
 修復步驟:
 
 1. 關閉Mac.
-2. 重啟按住 Cmd-S 到單一用戶模式.
-3. 鍵入  "**fsck_apfs -oy /dev/disk0s2**"
+2. 重啟按住 **Cmd-S** 到單一用戶模式.
+3. 鍵入  **fsck_apfs -oy /dev/disk0s2**
 4. 確認 後需要約3分鐘時間
 5. 鍵入 **reboot** 重啟.

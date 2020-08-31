@@ -176,4 +176,56 @@ https://www.amazon.com/Sintech-Adapter-Upgrade-2013-2016-2013-2015/dp/B07FYY3H5F
 
 #修復休眠問題
 
-###待續
+在2013-2014版本機型上包含MacBook Pro retina 13" & 15", 與 MacBook Air 11" & 13"因 為BootRom固件驅動(DXE NVMe Driver)缺陷導致休眠喚起時產生問題。
+這問題發生在**所有NVMe類型的 SSD**上，甚至Apple NVMe SSDs, 甚至 OWC aura Pro 2, 甚至 Transcend 850 NVMe SSDs...等
+
+這問題在於2013-2014 MacBooks的固件驅動(DXE NVMe Driver)缺陷
+
+有兩個解決方案
+1. 使用下面命令停止(disable )休眠功能
+`sudo pmset -a hibernatemode 0 standby 0 autopoweroff 0`
+
+2. 幫固件打上補丁
+補丁下載
+https://forums.macrumors.com/threads/upgrading-2013-2014-macbook-pro-ssd-to-m-2-nvme.2034976/page-65#post-26224320
+
+3. 使用MattCard
+http://www.cmizapper.com/products/mattcard.html
+
+方案一不是解決之道。缺少休眠可能使你的筆記本續航力一夜之間掉了10%
+
+方案二有風險並且需要SPI來寫入補丁
+
+方案三，使用MattCard，這是一個適合的方案
+MattCard有自己的ROM，可以接管主板上的，當然它也能隨時拔除，然後恢復到主板的ROM，也就是沒修改沒打過補丁的狀態。
+
+
+#BootCamp安裝問題
+
+在做BootCamp安裝Windows 10 前請先做好完整的備份。
+
+安裝過程會產生**藍畫面(blue screen )**
+如果產生錯誤藍畫面(blue screen ) 時
+使用下列步驟來解決:
+
+1.  按下 Shift + F10 keys.
+2.  啟動 登錄程式**regedit**
+3.  找到下列登錄路徑, **HKEY_LOCAL_MACHINE\SYSTEM\Setup\Status\ChildCompletion**
+4. 右方找到 **setup.exe** , 雙擊改變 value 為 3
+5. 關閉regedit
+6.  重啟
+
+安裝過程也請將電源插頭插上，勿依靠電池來完成全部安裝過程
+
+##其他安裝問題How to fix a drive partition failure while installing Windows through Boot Camp in High Sierra
+https://appleinsider.com/articles/18/01/29/how-to-fix-a-drive-partition-failure-while-installing-windows-through-boot-camp-in-high-sierra
+
+##An error occurred while partitioning the disk" in Mojave Boot Camp Assistant
+因為硬碟overallocation造成
+修復步驟:
+
+1. 關閉Mac.
+2. 重啟按住 Cmd-S 到單一用戶模式.
+3. 鍵入  "**fsck_apfs -oy /dev/disk0s2**"
+4. 確認 後需要約3分鐘時間
+5. 鍵入 **reboot** 重啟.
